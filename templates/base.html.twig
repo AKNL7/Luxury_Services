@@ -36,7 +36,8 @@
     <link href="https://assets-luxury.projets.garage404.com/css/revolution-navigation.css" rel="stylesheet">
 
 
-  <script src="https://assets-luxury.projets.garage404.com/js/modernizr.js"></script>
+ 
+    <script src="https://assets-luxury.projets.garage404.com/js/modernizr.js"></script>
     <script src="https://assets-luxury.projets.garage404.com/js/jquery.js"></script>
     <script src="https://assets-luxury.projets.garage404.com/js/animated-headline.js"></script>
     <script src="https://assets-luxury.projets.garage404.com/js/bootstrap-tabcollapse.js"></script>
@@ -70,6 +71,8 @@
     <script src="https://assets-luxury.projets.garage404.com/js/revolution-ext-parallax.js"></script>
 
     
+        
+        
         <title>{% block title %}Luxury Services recruitment & services!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
 
@@ -110,9 +113,9 @@
                         <nav class="overlay-menu">
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/templates/jobs/index.html">Jobs Offers</a></li>
+                                <li><a href="{{path('app_job')}}">Jobs Offers</a></li>
                                 <li><a href="/templates/compagny.html">About Us</a></li>
-                                <li><a href="/templates/contact.html">Contact</a></li>
+                                <li><a href="{{path('app_contact')}}">Contact</a></li>
                                 <li>-</li>
                                 <li><a href="/templates/auth/profile.html">Profile</a></li>
                                 <li><a href="/logout.html">Logout</a></li>
