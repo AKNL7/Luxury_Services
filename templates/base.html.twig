@@ -10,7 +10,13 @@
     <meta name="keywords" content="">
     <meta name="author" content="idmkr.io">
    
-   {% block MetaetLink %}{% endblock %}
+   {% block MetaetLink %} 
+   <meta name="base_url" content="http://www.fgtechs.fr/z-pedro/wwwluxuryservices">
+    <meta name="csrf-token" content="9Tnm0YBCxgVTxoqI1HzccsU5NuE9RughZmhpzgXn">
+    <!--  favicon -->
+    <link rel="shortcut icon" href="assets/img/ico/fav.png">
+    {% endblock %}
+
    <script>
         window.isMobile = (function() {
             var check = false;
@@ -112,12 +118,13 @@
                     <div class="nav-overlay" id="overlay">
                         <nav class="overlay-menu">
                             <ul>
-                                <li><a href="/">Home</a></li>
+                                <li><a href="{{path('app_home')}}">Home</a></li>
+                               
                                 <li><a href="{{path('app_job')}}">Jobs Offers</a></li>
-                                <li><a href="/templates/compagny.html">About Us</a></li>
+                                <li><a href="{{path('app_compagny')}}">About Us</a></li>
                                 <li><a href="{{path('app_contact')}}">Contact</a></li>
                                 <li>-</li>
-                                <li><a href="/templates/auth/profile.html">Profile</a></li>
+                                <li><a href="{{path('app_profil')}}">Profile</a></li>
                                 <li><a href="/logout.html">Logout</a></li>
                             </ul>
                         </nav>
@@ -139,25 +146,25 @@
                     </ul>
                     <ul class="menuzord-menu pull-right light" role="navigation">
                         <li class="active dropdown">
-                            <a target="_self" href="/">
+                            <a target="" href="{{path('app_home')}}">
                                 <i class=""></i>
                                 <span>Home</span>
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="/templates/jobs/index.html">
+                            <a target="_self" href="{{path('app_job')}}">
                                 <i class=""></i>
                                 <span>Jobs offers</span>
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="/templates/compagny.html">
+                            <a target="_self" href="{{path('app_compagny')}}">
                                 <i class=""></i>
                                 <span>About us</span>
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="/templates/contact.html">
+                            <a target="_self" href="{{path('app_contact')}}">
                                 <i class=""></i>
                                 <span>Contact</span>
                             </a>
