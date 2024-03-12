@@ -85,6 +85,8 @@ class Candidate
         $this->applies = new ArrayCollection();
     }
 
+   
+
     public function getId(): ?int
     {
         return $this->id;

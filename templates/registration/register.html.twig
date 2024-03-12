@@ -36,17 +36,16 @@
 
 {% block body %}
 	{# {% for flash_error in app.flashes('verify_email_error') %}
-					<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-				{% endfor %} #}
+							<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+						{% endfor %} #}
 
 
 	{# {{ form_errors(registrationForm) }} #}
 
-
-		<div
-		class="base"> <!-- Page -->
-		<div
-			class="page">
+   <div class="base"> <!-- Page -->
+		
+		<div class="page">
+			
 
 			<!-- Page Header-->
 			<section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
@@ -57,7 +56,7 @@
 							<span class="white-text">Welcome on board</span>
 							<ol class="breadcrumb">
 								<li>
-									<a href="#!">Home</a>
+									<a href="{{path('app_home')}}">Home</a>
 								</li>
 								<li class="active">Register</li>
 							</ol>
@@ -114,13 +113,13 @@
 
 
 							<div class="checkbox">
-                            <input type="checkbox"name="accept-terms" value="1" id="accept-terms" required>
-                                <label for="accept-terms">I have read and I accept the
-                                    <a href="#!" target="_blank">Terms Of Use</a>
-                                </label>
-                                {{ form_widget(registrationForm.agreeTerms) }}
-                            </div>
-                            
+								<input type="checkbox" name="accept-terms" value="1" id="accept-terms" required>
+								<label for="accept-terms">I have read and I accept the
+									<a href="#!" target="_blank">Terms Of Use</a>
+								</label>
+								{{ form_widget(registrationForm.agreeTerms) }}
+							</div>
+
 							<button type="submit" class="btn btn-lg gradient secondary btn-block waves-effect waves-light mt-20 mb-20">Create an account</button>
 							<div class="links">
 								<a href="/login.html">Already have an account? Click here</a>

@@ -25,9 +25,6 @@ class Client
     #[ORM\Column(length: 255)]
     private ?string $contactName = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $contactPosition = null;
-
     #[ORM\Column]
     private ?int $contactNumber = null;
 
@@ -43,6 +40,11 @@ class Client
     public function __construct()
     {
         $this->jobOffers = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->companyName;
     }
 
     public function getId(): ?int
@@ -86,17 +88,7 @@ class Client
         return $this;
     }
 
-    public function getContactPosition(): ?string
-    {
-        return $this->contactPosition;
-    }
-
-    public function setContactPosition(string $contactPosition): static
-    {
-        $this->contactPosition = $contactPosition;
-
-        return $this;
-    }
+  
 
     public function getContactNumber(): ?int
     {

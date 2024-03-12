@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\JobOfferRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+
 
 #[ORM\Entity(repositoryClass: JobOfferRepository::class)]
 class JobOffer
@@ -35,7 +37,7 @@ class JobOffer
     private ?int $salary = null;
 
     #[ORM\Column]
-    private ?int $createdAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'jobOffers')]
     private ?Client $client = null;
@@ -55,6 +57,7 @@ class JobOffer
     public function __construct()
     {
         $this->applies = new ArrayCollection();
+        $this->createdAt = new DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -134,12 +137,12 @@ class JobOffer
         return $this;
     }
 
-    public function getCreatedAt(): ?int
+    public function getCreatedAt(): ?DateTimeImmutable
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(int $createdAt): static
+    public function setCreatedAt(DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
 

@@ -39,6 +39,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
     private ?Candidate $candidate = null;
 
+    public function __toString() 
+    {
+       return $this->id;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
